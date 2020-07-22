@@ -8,8 +8,8 @@ namespace LibraryServices.Controllers
 {
     public class BooksController : ApiController
     {
-        private IBookRepository books = new BookRepository();
-
+        //private IBookRepository books = new BookRepository();
+        private IBookRepository books;
         public BooksController(IBookRepository books)
         {
             this.books = books;
