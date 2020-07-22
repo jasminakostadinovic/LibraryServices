@@ -14,6 +14,13 @@ namespace LibraryServices.Data.Repositories
         {
             new Book(){Id = 1, Title = "The girl on the train", Author = "Hawkins, Paula", PublicationYear = 2015, CallNumber =  "F HAWKI"}
         };
+
+        public bool AddNewBook(Book book)
+        {
+            books.Add(book);
+            return true;
+        }
+
         public List<Book> GetAllBooks()
         {
             return books;

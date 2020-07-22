@@ -30,5 +30,14 @@ namespace LibraryServices.Controllers
             return Ok(book);
         }
 
+        //POST
+        public IHttpActionResult PostBook(Book book)
+        {
+            var result = books.AddNewBook(book);
+            if (result == true)
+                return Ok(book);
+            return BadRequest();
+        }
+
     }
 }
