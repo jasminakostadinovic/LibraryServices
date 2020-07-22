@@ -16,12 +16,14 @@ namespace LibraryServices.Controllers
         }
 
         // GET api/Books
+        [HttpGet]
         public IEnumerable<Book> Get()
         {
             return books.GetAllBooks();
         }
 
         // GET api/Books/5
+        [HttpGet]
         public IHttpActionResult Get(int id)
         {
             var book = books.GetBook(id);
@@ -31,6 +33,7 @@ namespace LibraryServices.Controllers
         }
 
         //POST
+        [HttpPost]
         public IHttpActionResult PostBook(Book book)
         {
             var result = books.AddNewBook(book);
