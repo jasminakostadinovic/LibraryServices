@@ -30,5 +30,29 @@ namespace LibraryServices.Data.Repositories
         {
             return books.FirstOrDefault(b => b.Id == id);
         }
+
+        public bool Remove(int id)
+        {
+            var boorToRemove = GetBook(id);
+            if (boorToRemove == null)
+                return false;
+            books.Remove(boorToRemove);
+            return true;
+        }
+
+        public List<Book> UpdateBook(int id, Book book)
+        {
+            var bookToUpdate = GetBook(id);
+            if (bookToUpdate == null)
+                return books;
+
+            bookToUpdate.Author = book.Author;
+            bookToUpdate.CallNumber = book.CallNumber;
+            bookToUpdate.IsAvailable = book.IsAvailable;
+            bookToUpdate.PublicationYear = book.PublicationYear;
+            bookToUpdate.Title = book.Title;
+
+            return books;
+        }
     }
 }
