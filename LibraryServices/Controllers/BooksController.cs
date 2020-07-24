@@ -34,6 +34,39 @@ namespace LibraryServices.Controllers
             return Ok(book);
         }
 
+        // GET 
+        [HttpGet]
+        [Route("api/books/author/{id}")]
+        public IHttpActionResult GetAuthorById(int id)
+        {
+            var authorName = books.GetAuthorById(id);
+            if (authorName == null)
+                return NotFound();
+            return Ok(authorName);
+        }
+
+        // GET 
+        [HttpGet]
+        [Route("api/books/author/{author}/year/{year}")]
+        public IHttpActionResult GetBookByAuthorAndYear(string author, int year)
+        {
+            var book = books.GetBookByAuthorAndYear(author, year);
+            if (book == null)
+                return NotFound();
+            return Ok(book);
+        }
+
+        // GET 
+        [HttpGet]
+        [Route("api/books/{name}")]
+        public IHttpActionResult GetBooksByAuthor(string name)
+        {
+            var bookList = books.GetBookByAuthor(name);
+            if (bookList == null)
+                return NotFound();
+            return Ok(bookList);
+        }
+
         //POST
         [HttpPost]
         public IHttpActionResult PostBook(Book book)
