@@ -3,9 +3,11 @@ using LibraryServices.Data.Models;
 using LibraryServices.Data.Repositories;
 using System.Collections.Generic;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace LibraryServices.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class BooksController : ApiController
     {
         //private IBookRepository books = new BookRepository();

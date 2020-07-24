@@ -13,6 +13,7 @@ namespace LibraryServices
     {
         public static void Register(HttpConfiguration config)
         {
+            config.EnableCors();
             // Web API configuration and services
             StructuremapWebApi.Start();
             // Configure Web API to use only bearer token authentication.
