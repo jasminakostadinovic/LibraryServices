@@ -26,9 +26,24 @@ namespace LibraryServices.Data.Repositories
             return books;
         }
 
+        public Book GetBookByAuthorAndYear(string author, int year)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetAuthorById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public Book GetBook(int id)
         {
             return books.FirstOrDefault(b => b.Id == id);
+        }
+
+        public List<Book> GetBookByAuthor(string name)
+        {
+            throw new NotImplementedException();
         }
 
         public bool Remove(int id)
