@@ -26,6 +26,7 @@ namespace LibraryServices.Controllers
 
         // GET api/Books/5
         [HttpGet]
+        [Route("api/books/id/{id}")]
         public IHttpActionResult Get(int id)
         {
             var book = books.GetBook(id);
