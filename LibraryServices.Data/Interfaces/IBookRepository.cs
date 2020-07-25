@@ -17,5 +17,6 @@ namespace LibraryServices.Data.Interfaces
         List<Book> GetBookByAuthor(string name);
         string GetAuthorById(int id);
         Book GetBookByAuthorAndYear(string author, int year);
+        Book AddCost(int id, Cost cost);
     }
 }

@@ -96,5 +96,17 @@ namespace LibraryServices.Controllers
             return NotFound();
         }
 
+
+        //Add cost
+        [HttpPut]
+        [Route("api/books/updatecost/{id}")]
+        public IHttpActionResult AddCost(int id, Cost cost)
+        {
+            var result = books.AddCost(id, cost);
+            if (result != null)
+                return Ok(result);
+            return NotFound();
+        }
+
     }
 }

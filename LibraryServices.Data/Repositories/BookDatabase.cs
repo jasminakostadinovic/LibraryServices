@@ -66,5 +66,16 @@ namespace LibraryServices.Data.Repositories
 
             return db.Books.ToList();
         }
+
+        public Book AddCost(int id, Cost cost)
+        {
+            var book = GetBook(id);
+            if(book != null)
+            {
+                book.Cost = cost;
+                db.SaveChanges();
+            }           
+            return book;
+        }
     }
 }

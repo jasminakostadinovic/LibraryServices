@@ -13,5 +13,8 @@ namespace LibraryServices.Data.Models
         public int PublicationYear { get; set; }
         public bool IsAvailable { get; set; }
         public string CallNumber { get; set; }
+
+        public int? CostId { get; set; }
+        public virtual Cost Cost { get; set; }
     }
 }

@@ -69,5 +69,10 @@ namespace LibraryServices.Data.Repositories
 
             return books;
         }
+
+        public Book AddCost(int id, Cost cost)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
